@@ -1,0 +1,32 @@
+{
+  "name": "felix",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src/**.{js,ts,tsx}",
+    "tsc": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pavelSaikov/felix.git"
+  },
+  "author": "Pavel Saikou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pavelSaikov/felix/issues"
+  },
+  "homepage": "https://github.com/pavelSaikov/felix#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^14.14.10",
+    "@typescript-eslint/eslint-plugin": "^4.9.0",
+    "@typescript-eslint/parser": "^4.9.0",
+    "eslint": "^7.14.0",
+    "eslint-config-prettier": "^6.15.0",
+    "husky": "^4.3.0",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.2"
+  }
+}

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7b122a41-18b9-4148-84e8-d3c043258a97" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.eslintignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.eslintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.huskyrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/felix.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectId" id="1l4FZ2TpChbe25Iz0v8ATrdGFwl" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="nodejs.mocha.mocha_node_package_dir" value="" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettier.files.pattern" value="{**/*,*}.{js,ts,jsx,tsx,html,json}" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Admin\Documents\materials\projects\node\felix\node_modules\prettier" />
+    <property name="run.prettier.on.save" value="true" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
+    <property name="ts.external.directory.path" value="C:\Users\Admin\Documents\materials\projects\node\felix\node_modules\typescript\lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Documents\materials\projects\node\felix\src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Documents\materials\projects\node\felix\src" />
+      <recent name="C:\Users\Admin\Documents\materials\projects\node\felix" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="NodeJSConfigurationType" path-to-js-file="src/test.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7b122a41-18b9-4148-84e8-d3c043258a97" name="Default Changelist" comment="" />
+      <created>1606848508161</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606848508161</updated>
+      <workItem from="1606848509581" duration="840000" />
+      <workItem from="1606849361243" duration="1842000" />
+      <workItem from="1606851224672" duration="21000" />
+      <workItem from="1606851259327" duration="38000" />
+      <workItem from="1606851309266" duration="684000" />
+      <workItem from="1606852005433" duration="1060000" />
+      <workItem from="1606854414478" duration="2210000" />
+      <workItem from="1606929738007" duration="23000" />
+      <workItem from="1606930009976" duration="57000" />
+      <workItem from="1607159845953" duration="163000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/src/index.js" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="828" y="477" key="#ESLint" timestamp="1606850081646">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state x="828" y="477" key="#ESLint/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1606850081646" />
+    <state x="414" y="239" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606855159712">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state x="414" y="239" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1606855159712" />
+    <state x="783" y="343" key="FileChooserDialogImpl" timestamp="1606930065120">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state x="783" y="343" key="FileChooserDialogImpl/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1606930065120" />
+    <state width="1877" height="307" key="GridCell.Tab.0.bottom" timestamp="1606856893886">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state width="1877" height="307" key="GridCell.Tab.0.bottom/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1606856893886" />
+    <state width="1877" height="307" key="GridCell.Tab.0.center" timestamp="1606856893886">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state width="1877" height="307" key="GridCell.Tab.0.center/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1606856893886" />
+    <state width="1877" height="307" key="GridCell.Tab.0.left" timestamp="1606856893886">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state width="1877" height="307" key="GridCell.Tab.0.left/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1606856893886" />
+    <state width="1877" height="307" key="GridCell.Tab.0.right" timestamp="1606856893886">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state width="1877" height="307" key="GridCell.Tab.0.right/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1606856893886" />
+    <state x="418" y="199" key="SettingsEditor" timestamp="1606851913183">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state x="418" y="199" key="SettingsEditor/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1606851913183" />
+    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1606851992088">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1606851992088" />
+  </component>
+</project>
