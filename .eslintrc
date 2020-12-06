@@ -1,7 +1,7 @@
 {
   "root": true,
   "env": {
-    "es6": true
+    "node": true
   },
   "parser": "@typescript-eslint/parser",
   "plugins": [
@@ -9,22 +9,16 @@
   ],
   "extends": [
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
     "prettier",
-    "prettier/@typescript-eslint"
+    "prettier/@typescript-eslint",
+    "plugin:@typescript-eslint/recommended"
   ],
   "parserOptions": {
-    "ecmaVersion": 2018,
+    "ecmaVersion": 2020,
     "sourceType": "module"
   },
   "rules": {
-    "indent": [
-      "error",
-      2,
-      {
-        "SwitchCase": 1
-      }
-    ],
+    "indent": "off",
     "linebreak-style": [
       "error",
       "unix"
@@ -36,7 +30,9 @@
     "semi": [
       "error",
       "always"
-    ]
+    ],
+    "@typescript-eslint/no-non-null-asserted-optional-chain": "error",
+    "@typescript-eslint/prefer-optional-chain": "error"
   },
   "settings": {
     "import/resolver": {
