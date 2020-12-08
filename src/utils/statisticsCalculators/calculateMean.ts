@@ -1,4 +1,5 @@
 import { IStatisticsCalculator } from '../../models';
+import { parseNumber } from '../parseNumber';
 
 export interface ICalculateMeanParams {
   mean: number;
@@ -14,7 +15,7 @@ export const calculateMean: IStatisticsCalculator = (
     statisticsParams = { mean: 0, elementsNumber: 0 };
   }
 
-  fieldValue = +fieldValue;
+  fieldValue = parseNumber(fieldValue);
   if (isNaN(fieldValue)) {
     throw new TypeError(`Field ${fieldName} is not a number. Cortege number - ${statisticsParams.elementsNumber + 1}`);
   }

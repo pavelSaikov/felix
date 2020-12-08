@@ -5,7 +5,7 @@ export enum FelixStatisticalType {
   max = 'Max',
   min = 'Min',
   rating = 'Rating',
-  numberRating = 'Number rating', // create rating from rounded numbers
+  integerRating = 'Integer Rating', // create rating from rounded numbers
 }
 
 export const FelixStatisticalTypes = [
@@ -13,6 +13,7 @@ export const FelixStatisticalTypes = [
   FelixStatisticalType.max,
   FelixStatisticalType.min,
   FelixStatisticalType.rating,
+  FelixStatisticalType.integerRating,
 ];
 
 export const DataTypeAndAvailableStatisticalTypeMap = new Map<FelixType | string, FelixStatisticalType[]>([
@@ -23,11 +24,15 @@ export const DataTypeAndAvailableStatisticalTypeMap = new Map<FelixType | string
       FelixStatisticalType.max,
       FelixStatisticalType.min,
       FelixStatisticalType.rating,
-      FelixStatisticalType.numberRating,
+      FelixStatisticalType.integerRating,
     ],
   ],
   [FelixType.String, [FelixStatisticalType.rating]],
 ]);
+
+export interface IRatingMap {
+  [key: string]: number;
+}
 
 export interface IRequestedStatisticsItemOptions {
   [key: string]: string | number | boolean;
@@ -37,6 +42,10 @@ export interface IRequestedStatisticsItem {
   fieldName: string;
   statisticalType: FelixStatisticalType;
   options: IRequestedStatisticsItemOptions;
+}
+
+export interface IObjectReport {
+  [key: string]: number | string | IObjectReport;
 }
 
 export interface IStatisticalData {

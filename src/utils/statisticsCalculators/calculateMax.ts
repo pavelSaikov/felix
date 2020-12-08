@@ -1,4 +1,5 @@
 import { IStatisticsCalculator } from '../../models';
+import { parseNumber } from '../parseNumber';
 import { isNumber } from '../validators';
 
 export interface ICalculateMaxParams {
@@ -10,7 +11,7 @@ export const calculateMax: IStatisticsCalculator = (
   fieldValue?: string | number,
   statisticalParams?: ICalculateMaxParams,
 ): ICalculateMaxParams => {
-  fieldValue = +fieldValue;
+  fieldValue = parseNumber(fieldValue);
   isNumber(fieldName, fieldValue);
 
   return statisticalParams ? { max: Math.max(statisticalParams.max, fieldValue) } : { max: fieldValue };

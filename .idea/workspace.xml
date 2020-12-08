@@ -23,35 +23,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b122a41-18b9-4148-84e8-d3c043258a97" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/errors/InitialParamError.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/errors/StatisticalParamError.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/errors/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/felixStatisticalTypes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/felixTypes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/initialParams.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/statisticsCalculator.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/reporters/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/reporters/ratingReporter.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/reporters/singleValueReporterFactory.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/statisticsCalculators/calculateMax.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/statisticsCalculators/calculateMean.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/statisticsCalculators/calculateMin.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/statisticsCalculators/calculateRating.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/statisticsCalculators/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/validators/checkArgsForAddStatisticalParamMethod.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/validators/checkInitialParams.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/validators/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/validators/isNumber.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/parseNumber.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/statisticsCalculators/calculateIntegerRating.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/statisticsExtractors/extractRatingStatistics.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/statisticsExtractors/index.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/test.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/felixStatisticalTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/felixStatisticalTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/initialParams.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/initialParams.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/reporters/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/reporters/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/reporters/ratingReporter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/reporters/ratingReporter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/statisticsCalculators/calculateMax.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/statisticsCalculators/calculateMax.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/statisticsCalculators/calculateMean.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/statisticsCalculators/calculateMean.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/statisticsCalculators/calculateMin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/statisticsCalculators/calculateMin.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/statisticsCalculators/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/statisticsCalculators/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/validators/checkInitialParams.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/checkInitialParams.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +66,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/node_modules" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -90,20 +78,21 @@
     <property name="prettier.files.pattern" value="{**/*,*}.{js,ts,jsx,tsx,html,json}" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Admin\Documents\materials\projects\node\felix\node_modules\prettier" />
     <property name="run.prettier.on.save" value="true" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.notifications" />
     <property name="ts.external.directory.path" value="C:\Users\Admin\Documents\materials\projects\node\felix\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Admin\Documents\materials\projects\node\felix\src" />
-      <recent name="C:\Users\Admin\Documents\materials\projects\node\felix" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Admin\Documents\materials\projects\node\felix" />
       <recent name="C:\Users\Admin\Documents\materials\projects\node\felix\src\utils\statisticsCalculators" />
       <recent name="C:\Users\Admin\Documents\materials\projects\node\felix\src\utils\validators" />
       <recent name="C:\Users\Admin\Documents\materials\projects\node\felix\src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Documents\materials\projects\node\felix\node_modules" />
+      <recent name="C:\Users\Admin\Documents\materials\projects\node\felix\src" />
+      <recent name="C:\Users\Admin\Documents\materials\projects\node\felix" />
     </key>
   </component>
   <component name="RunManager">
@@ -131,6 +120,9 @@
       <workItem from="1607159845953" duration="22823000" />
       <workItem from="1607244940991" duration="1858000" />
       <workItem from="1607246812405" duration="19811000" />
+      <workItem from="1607336832925" duration="81000" />
+      <workItem from="1607336946894" duration="8406000" />
+      <workItem from="1607444709755" duration="3758000" />
     </task>
     <task id="LOCAL-00001" summary="init project structure">
       <created>1607160292571</created>
@@ -144,11 +136,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-    <option name="exactExcludedFiles">
-      <list>
-        <option value="$PROJECT_DIR$/src/index.js" />
-      </list>
-    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -180,10 +167,14 @@
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
     <state x="675" y="386" key="#com.intellij.fileTypes.FileTypeChooser/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607254912739" />
-    <state x="690" y="331" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1607173889788">
+    <state x="640" y="320" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1607336897043">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state x="690" y="331" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607173889788" />
+    <state x="640" y="320" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607336897043" />
+    <state x="690" y="331" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1607357900330">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state x="690" y="331" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607357900330" />
     <state x="783" y="343" key="FileChooserDialogImpl" timestamp="1607244207431">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
@@ -256,10 +247,10 @@
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
     <state x="714" y="287" key="RollbackChangesDialog/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607244161345" />
-    <state x="588" y="270" key="SettingsEditor" timestamp="1607175307271">
+    <state x="588" y="270" key="SettingsEditor" timestamp="1607446927487">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state x="588" y="270" key="SettingsEditor/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607175307271" />
+    <state x="588" y="270" key="SettingsEditor/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607446927487" />
     <state x="667" y="184" width="585" height="801" key="find.popup" timestamp="1607251556087">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
@@ -272,5 +263,9 @@
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
     <state x="623" y="257" width="672" height="678" key="search.everywhere.popup/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607251456750" />
+    <state x="682" y="496" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1607448364703">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state x="682" y="496" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607448364703" />
   </component>
 </project>

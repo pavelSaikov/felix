@@ -1,4 +1,5 @@
 import { IStatisticsCalculator } from '../../models';
+import { parseNumber } from '../parseNumber';
 import { isNumber } from '../validators';
 
 export interface ICalculateMinParams {
@@ -10,7 +11,7 @@ export const calculateMin: IStatisticsCalculator = (
   fieldValue?: string | number,
   statisticalParams?: ICalculateMinParams,
 ): ICalculateMinParams => {
-  fieldValue = +fieldValue;
+  fieldValue = parseNumber(fieldValue);
   isNumber(fieldName, fieldValue);
 
   return statisticalParams ? { min: Math.min(statisticalParams.min, fieldValue) } : { min: fieldValue };

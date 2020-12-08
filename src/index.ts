@@ -7,6 +7,7 @@ import {
   FelixType,
   IFields,
   IInitialParams,
+  IObjectReport,
   IRequestedStatisticsItem,
   IRequestedStatisticsItemOptions,
   IStatisticalData,
@@ -16,6 +17,7 @@ import {
   checkInitialParams,
   checkIsStatisticalTypeAvailableForField,
   statisticalParamStatisticalReporterMap,
+  statisticalTypeStatisticsExtractorMap,
   statisticsCalculatorsStatisticalTypesMap,
 } from './utils';
 
@@ -25,6 +27,7 @@ class Felix extends Transform {
   private readonly fieldNames: string[];
   private requestedStatistics: IRequestedStatisticsItem[];
   private statisticalData: IStatisticalData;
+  private cortegesNumber: number;
 
   constructor(params?: IInitialParams) {
     checkInitialParams(params);
@@ -36,14 +39,15 @@ class Felix extends Transform {
     this.fieldNames = Object.keys(params?.fields);
     this.requestedStatistics = [];
     this.statisticalData = {};
+    this.cortegesNumber = 0;
   }
 
   private checkIsFieldExists(fieldName: string) {
     return this.fieldNames.includes(fieldName);
   }
 
-  private createReport(): string {
-    return this.requestedStatistics.reduce<string>((report, pieceOfStatistics) => {
+  private createTextReport(): string {
+    const reportWithoutCounter = this.requestedStatistics.reduce<string>((report, pieceOfStatistics) => {
       const { statisticalType, fieldName, options } = pieceOfStatistics;
       const statistics = this.statisticalData[fieldName][statisticalType];
       const pieceOfReport = statisticalParamStatisticalReporterMap.get(statisticalType)(fieldName, statistics, options);
@@ -54,6 +58,36 @@ class Felix extends Transform {
 
       return report.concat('\n').concat(pieceOfReport);
     }, '');
+
+    if (this.initialParams.countCorteges) {
+      return `Corteges number: ${this.cortegesNumber}\n`.concat(reportWithoutCounter);
+    }
+
+    return reportWithoutCounter;
+  }
+
+  private createObjectReport(): IObjectReport {
+    const fieldStatistics = this.requestedStatistics.reduce((acc, { fieldName, statisticalType, options }) => {
+      const currentStatistics = this.statisticalData[fieldName]?.[statisticalType];
+      const preparedStatisticsItem = statisticalTypeStatisticsExtractorMap.get(statisticalType)(
+        currentStatistics,
+        options,
+      );
+
+      if (!acc[fieldName]) {
+        acc[fieldName] = {};
+      }
+
+      acc[fieldName][statisticalType] = preparedStatisticsItem;
+
+      return acc;
+    }, {});
+
+    if (this.initialParams.countCorteges) {
+      return { cortegesNumber: this.cortegesNumber, statistics: fieldStatistics };
+    }
+
+    return { statistics: fieldStatistics };
   }
 
   public addStatisticalParam(
@@ -88,16 +122,21 @@ class Felix extends Transform {
       };
     });
 
+    if (this.initialParams.countCorteges) {
+      this.cortegesNumber++;
+    }
+
     callback();
   }
 
   public _flush(callback: TransformCallback): void {
-    if (this.initialParams.createReport) {
-      this.push(this.createReport());
+    if (this.initialParams.createTextReport) {
+      this.push(this.createTextReport());
+      callback();
       return;
     }
 
-    this.push(this.statisticalData);
+    this.push(JSON.stringify(this.createObjectReport()));
     callback();
   }
 }

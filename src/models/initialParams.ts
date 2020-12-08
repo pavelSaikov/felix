@@ -7,5 +7,5 @@ export interface IFields {
 export interface IInitialParams {
   fields?: IFields;
   countCorteges?: boolean;
-  createReport?: boolean;
+  createTextReport?: boolean;
 }

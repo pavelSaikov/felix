@@ -18,7 +18,7 @@ export const checkInitialParams = (params?: IInitialParams): void => {
     throw new InitialParamsError('Initial parameters is not defined');
   }
 
-  if (params.createReport !== undefined && typeof params.createReport !== 'boolean') {
+  if (params.createTextReport !== undefined && typeof params.createTextReport !== 'boolean') {
     throw new InitialParamsError('Parameter "createReport" should has type Boolean or Undefined');
   }
 
