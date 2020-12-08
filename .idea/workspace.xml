@@ -23,16 +23,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b122a41-18b9-4148-84e8-d3c043258a97" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/errors/UserConsumerError.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/validators/checkUserConsumer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/errors/ChunkFilterError.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/validators/checkChunkFilter.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/test.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/errors/InitialParamError.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/errors/InitialParamError.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/errors/StatisticalParamError.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/errors/StatisticalParamError.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/errors/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/errors/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/validators/checkArgsForAddStatisticalParamMethod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/checkArgsForAddStatisticalParamMethod.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/validators/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -116,7 +113,7 @@
       <workItem from="1607246812405" duration="19811000" />
       <workItem from="1607336832925" duration="81000" />
       <workItem from="1607336946894" duration="8406000" />
-      <workItem from="1607444709755" duration="5157000" />
+      <workItem from="1607444709755" duration="8236000" />
     </task>
     <task id="LOCAL-00001" summary="init project structure">
       <created>1607160292571</created>
@@ -132,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607449290366</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat: implement ability add user function, which get chunks">
+      <created>1607450756351</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1607450756351</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,7 +158,8 @@
     <MESSAGE value="init project structure" />
     <MESSAGE value="feat: implement base logic" />
     <MESSAGE value="feat: implement creation of report as an object" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implement creation of report as an object" />
+    <MESSAGE value="feat: implement ability add user function, which get chunks" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: implement ability add user function, which get chunks" />
   </component>
   <component name="WindowStateProjectService">
     <state x="828" y="477" key="#ESLint" timestamp="1606850081646">

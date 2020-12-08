@@ -10,3 +10,7 @@ export interface IChunk {
 export interface IUserConsumer {
   (chunk: IChunk): void;
 }
+
+export interface IChunkFilter {
+  (chunk: IChunk): boolean;
+}

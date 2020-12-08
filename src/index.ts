@@ -6,6 +6,7 @@ import {
   FelixStatisticalType,
   FelixType,
   IChunk,
+  IChunkFilter,
   IFields,
   IInitialParams,
   IObjectReport,
@@ -16,6 +17,7 @@ import {
 } from './models';
 import {
   checkArgsForAddStatisticalParamMethod,
+  checkChunkFilter,
   checkInitialParams,
   checkIsStatisticalTypeAvailableForField,
   checkUserConsumer,
@@ -32,6 +34,7 @@ class Felix extends Transform {
   private statisticalData: IStatisticalData;
   private cortegesNumber: number;
   private userConsumers: IUserConsumer[];
+  private chunkFilters: IChunkFilter[];
 
   constructor(params?: IInitialParams) {
     checkInitialParams(params);
@@ -45,6 +48,7 @@ class Felix extends Transform {
     this.statisticalData = {};
     this.cortegesNumber = 0;
     this.userConsumers = [];
+    this.chunkFilters = [];
   }
 
   private checkIsFieldExists(fieldName: string) {
@@ -117,7 +121,22 @@ class Felix extends Transform {
     this.userConsumers.push(consumer);
   }
 
+  public addChunkFilter(filter: IChunkFilter): void {
+    checkChunkFilter(filter);
+
+    this.chunkFilters.push(filter);
+  }
+
   public _transform(chunk: IChunk, encoding: BufferEncoding, callback: TransformCallback): void {
+    if (this.chunkFilters.length) {
+      const filtersAnswers = this.chunkFilters.map(filter => !!filter(_.cloneDeep(chunk)));
+
+      if (filtersAnswers.findIndex(answer => answer === false) !== -1) {
+        callback();
+        return;
+      }
+    }
+
     if (this.userConsumers.length) {
       this.userConsumers.forEach(consumer => consumer(_.cloneDeep(chunk)));
     }
