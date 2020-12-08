@@ -1,4 +1,4 @@
-import StatisticalParamError from '../../errors/StatisticalParamError';
+import { StatisticalParamError } from '../../errors';
 import {
   DataTypeAndAvailableStatisticalTypeMap,
   FelixStatisticalType,

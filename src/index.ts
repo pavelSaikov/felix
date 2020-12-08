@@ -5,17 +5,20 @@ import { StatisticalParamError } from './errors';
 import {
   FelixStatisticalType,
   FelixType,
+  IChunk,
   IFields,
   IInitialParams,
   IObjectReport,
   IRequestedStatisticsItem,
   IRequestedStatisticsItemOptions,
   IStatisticalData,
+  IUserConsumer,
 } from './models';
 import {
   checkArgsForAddStatisticalParamMethod,
   checkInitialParams,
   checkIsStatisticalTypeAvailableForField,
+  checkUserConsumer,
   statisticalParamStatisticalReporterMap,
   statisticalTypeStatisticsExtractorMap,
   statisticsCalculatorsStatisticalTypesMap,
@@ -28,6 +31,7 @@ class Felix extends Transform {
   private requestedStatistics: IRequestedStatisticsItem[];
   private statisticalData: IStatisticalData;
   private cortegesNumber: number;
+  private userConsumers: IUserConsumer[];
 
   constructor(params?: IInitialParams) {
     checkInitialParams(params);
@@ -40,6 +44,7 @@ class Felix extends Transform {
     this.requestedStatistics = [];
     this.statisticalData = {};
     this.cortegesNumber = 0;
+    this.userConsumers = [];
   }
 
   private checkIsFieldExists(fieldName: string) {
@@ -106,11 +111,17 @@ class Felix extends Transform {
     this.requestedStatistics.push({ fieldName, statisticalType: statisticalParamType, options });
   }
 
-  public _transform(
-    chunk: { [key: string]: string | number },
-    encoding: BufferEncoding,
-    callback: TransformCallback,
-  ): void {
+  public addDataConsumer(consumer: IUserConsumer): void {
+    checkUserConsumer(consumer);
+
+    this.userConsumers.push(consumer);
+  }
+
+  public _transform(chunk: IChunk, encoding: BufferEncoding, callback: TransformCallback): void {
+    if (this.userConsumers.length) {
+      this.userConsumers.forEach(consumer => consumer(_.cloneDeep(chunk)));
+    }
+
     this.requestedStatistics.forEach(({ fieldName, statisticalType }) => {
       const currentStatistics = this.statisticalData[fieldName]?.[statisticalType];
       const statisticsCalculator = statisticsCalculatorsStatisticalTypesMap.get(statisticalType);

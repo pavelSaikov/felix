@@ -1,4 +1,3 @@
-import InitialParamsError from './InitialParamError';
-import StatisticalParamError from './StatisticalParamError';
-
-export { InitialParamsError, StatisticalParamError };
+export * from './InitialParamError';
+export * from './StatisticalParamError';
+export * from './UserConsumerError';
