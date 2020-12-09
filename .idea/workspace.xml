@@ -23,14 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b122a41-18b9-4148-84e8-d3c043258a97" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/errors/ChunkFilterError.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/validators/checkChunkFilter.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/test.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/errors/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/errors/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/validators/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.huskyrc" beforeDir="false" afterPath="$PROJECT_DIR$/.huskyrc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,28 +60,26 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs.mocha.mocha_node_package_dir" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="prettier.files.pattern" value="{**/*,*}.{js,ts,jsx,tsx,html,json}" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Admin\Documents\materials\projects\node\felix\node_modules\prettier" />
-    <property name="run.prettier.on.save" value="true" />
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.notifications" />
     <property name="ts.external.directory.path" value="C:\Users\Admin\Documents\materials\projects\node\felix\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Documents\materials\projects\node\felix\node_modules" />
+      <recent name="C:\Users\Admin\Documents\materials\projects\node\felix\src" />
+      <recent name="C:\Users\Admin\Documents\materials\projects\node\felix" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Admin\Documents\materials\projects\node\felix" />
       <recent name="C:\Users\Admin\Documents\materials\projects\node\felix\src\utils\statisticsCalculators" />
       <recent name="C:\Users\Admin\Documents\materials\projects\node\felix\src\utils\validators" />
       <recent name="C:\Users\Admin\Documents\materials\projects\node\felix\src" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Admin\Documents\materials\projects\node\felix\node_modules" />
-      <recent name="C:\Users\Admin\Documents\materials\projects\node\felix\src" />
-      <recent name="C:\Users\Admin\Documents\materials\projects\node\felix" />
-    </key>
   </component>
   <component name="RunManager">
-    <configuration name="start" type="NodeJSConfigurationType" path-to-js-file="test.js" working-dir="$PROJECT_DIR$">
+    <configuration name="start" type="NodeJSConfigurationType" path-to-js-file="$PROJECT_DIR$/start.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
   </component>
@@ -113,7 +105,9 @@
       <workItem from="1607246812405" duration="19811000" />
       <workItem from="1607336832925" duration="81000" />
       <workItem from="1607336946894" duration="8406000" />
-      <workItem from="1607444709755" duration="8236000" />
+      <workItem from="1607444709755" duration="8688000" />
+      <workItem from="1607533734051" duration="88000" />
+      <workItem from="1607533853840" duration="3859000" />
     </task>
     <task id="LOCAL-00001" summary="init project structure">
       <created>1607160292571</created>
@@ -136,7 +130,42 @@
       <option name="project" value="LOCAL" />
       <updated>1607450756351</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: implement ability to add filter functions, that allow user skip unnecessary corteges">
+      <created>1607458130314</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1607458130314</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: add jest config, implement test for 'parseNumber' function">
+      <created>1607537405479</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1607537405479</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: add jest config, implement test for 'parseNumber' function">
+      <created>1607537651236</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1607537651236</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat: add jest config, implement test for 'parseNumber' function">
+      <created>1607537698058</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1607537698058</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat: add jest config, implement test for 'parseNumber' function">
+      <created>1607537876249</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1607537876249</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,120 +188,8 @@
     <MESSAGE value="feat: implement base logic" />
     <MESSAGE value="feat: implement creation of report as an object" />
     <MESSAGE value="feat: implement ability add user function, which get chunks" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implement ability add user function, which get chunks" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="828" y="477" key="#ESLint" timestamp="1606850081646">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state x="828" y="477" key="#ESLint/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1606850081646" />
-    <state x="414" y="239" width="1092" height="739" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607244706360">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state x="414" y="239" width="1092" height="739" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607244706360" />
-    <state x="675" y="386" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607254912739">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state x="675" y="386" key="#com.intellij.fileTypes.FileTypeChooser/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607254912739" />
-    <state x="640" y="320" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1607336897043">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state x="640" y="320" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607336897043" />
-    <state x="690" y="331" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1607357900330">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state x="690" y="331" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607357900330" />
-    <state x="783" y="343" key="FileChooserDialogImpl" timestamp="1607244207431">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state x="783" y="343" key="FileChooserDialogImpl/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607244207431" />
-    <state width="1877" height="400" key="GridCell.Tab.0.bottom" timestamp="1607244804149">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state width="1877" height="400" key="GridCell.Tab.0.bottom/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607244804149" />
-    <state width="1877" height="400" key="GridCell.Tab.0.center" timestamp="1607244804149">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state width="1877" height="400" key="GridCell.Tab.0.center/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607244804149" />
-    <state width="1877" height="400" key="GridCell.Tab.0.left" timestamp="1607244804149">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state width="1877" height="400" key="GridCell.Tab.0.left/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607244804149" />
-    <state width="1877" height="400" key="GridCell.Tab.0.right" timestamp="1607244804149">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state width="1877" height="400" key="GridCell.Tab.0.right/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607244804149" />
-    <state width="1877" height="400" key="GridCell.Tab.1.bottom" timestamp="1607244804149">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state width="1877" height="400" key="GridCell.Tab.1.bottom/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607244804149" />
-    <state width="1877" height="400" key="GridCell.Tab.1.center" timestamp="1607244804149">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state width="1877" height="400" key="GridCell.Tab.1.center/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607244804149" />
-    <state width="1877" height="400" key="GridCell.Tab.1.left" timestamp="1607244804149">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state width="1877" height="400" key="GridCell.Tab.1.left/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607244804149" />
-    <state width="1877" height="400" key="GridCell.Tab.1.right" timestamp="1607244804149">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state width="1877" height="400" key="GridCell.Tab.1.right/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607244804149" />
-    <state width="1877" height="400" key="GridCell.Tab.2.bottom" timestamp="1607244804150">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state width="1877" height="400" key="GridCell.Tab.2.bottom/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607244804150" />
-    <state width="1877" height="400" key="GridCell.Tab.2.center" timestamp="1607244804150">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state width="1877" height="400" key="GridCell.Tab.2.center/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607244804150" />
-    <state width="1877" height="400" key="GridCell.Tab.2.left" timestamp="1607244804150">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state width="1877" height="400" key="GridCell.Tab.2.left/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607244804150" />
-    <state width="1877" height="400" key="GridCell.Tab.2.right" timestamp="1607244804150">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state width="1877" height="400" key="GridCell.Tab.2.right/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607244804150" />
-    <state width="1877" height="400" key="GridCell.Tab.3.bottom" timestamp="1607244804150">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state width="1877" height="400" key="GridCell.Tab.3.bottom/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607244804150" />
-    <state width="1877" height="400" key="GridCell.Tab.3.center" timestamp="1607244804150">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state width="1877" height="400" key="GridCell.Tab.3.center/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607244804150" />
-    <state width="1877" height="400" key="GridCell.Tab.3.left" timestamp="1607244804150">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state width="1877" height="400" key="GridCell.Tab.3.left/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607244804150" />
-    <state width="1877" height="400" key="GridCell.Tab.3.right" timestamp="1607244804150">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state width="1877" height="400" key="GridCell.Tab.3.right/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607244804150" />
-    <state x="714" y="287" key="RollbackChangesDialog" timestamp="1607244161345">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state x="714" y="287" key="RollbackChangesDialog/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607244161345" />
-    <state x="588" y="270" key="SettingsEditor" timestamp="1607446927487">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state x="588" y="270" key="SettingsEditor/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607446927487" />
-    <state x="667" y="184" width="585" height="801" key="find.popup" timestamp="1607251556087">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state x="667" y="184" width="585" height="801" key="find.popup/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607251556087" />
-    <state x="616" y="273" key="run.anything.popup" timestamp="1607273989567">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state x="616" y="273" key="run.anything.popup/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607273989567" />
-    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1607251456750">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607251456750" />
-    <state x="682" y="496" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1607448364703">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state x="682" y="496" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/-1440.0.1440.870/0.0.1920.1170@0.0.1920.1170" timestamp="1607448364703" />
+    <MESSAGE value="feat: implement ability to add filter functions, that allow user skip unnecessary corteges" />
+    <MESSAGE value="feat: add jest config, implement test for 'parseNumber' function" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add jest config, implement test for 'parseNumber' function" />
   </component>
 </project>

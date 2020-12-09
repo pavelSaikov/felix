@@ -3,5 +3,9 @@ export const parseNumber = (value?: string | number): number => {
     value = value.replace(',', '.');
   }
 
+  if (typeof value !== 'number' && typeof value !== 'string') {
+    return NaN;
+  }
+
   return +value;
 };
