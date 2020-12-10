@@ -23,9 +23,9 @@ describe('calculateMean', () => {
 
   test('should throw error when operate with incorrect values', () => {
     const data = [{ field: undefined }, { field: '1.3' }, { field: '1,5' }];
-    const calcIntegerRating = () =>
+    const calcMeanValue = () =>
       data.reduce((statistics, record) => calculateMean('field', record.field, statistics), null);
 
-    expect(calcIntegerRating).toThrowError();
+    expect(calcMeanValue).toThrowError();
   });
 });
