@@ -33,15 +33,15 @@ describe('parseNumber', () => {
     const stringNumber = '5,4a';
     const result = parseNumber(stringNumber);
 
-    expect(result).toBe(NaN);
+    expect(result).toBeNaN();
   });
 
   test('should return NaN when argument is null or undefined', () => {
     const undefinedResult = parseNumber(undefined);
     const nullResult = parseNumber(null);
 
-    expect(undefinedResult).toBe(NaN);
-    expect(nullResult).toBe(NaN);
+    expect(undefinedResult).toBeNaN();
+    expect(nullResult).toBeNaN();
   });
 
   test('should return NaN when argument is object', () => {
@@ -49,6 +49,6 @@ describe('parseNumber', () => {
     // @ts-ignore
     const result = parseNumber(object);
 
-    expect(result).toBe(NaN);
+    expect(result).toBeNaN();
   });
 });
