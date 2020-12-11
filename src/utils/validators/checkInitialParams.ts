@@ -6,9 +6,15 @@ const checkFieldTypes = (fields?: IFields): void => {
     throw new InitialParamsError('Data fields is not defined');
   }
 
-  Object.keys(fields).forEach((fieldName: string) => {
+  const fieldNames = Object.keys(fields);
+
+  if (!fieldNames.length) {
+    throw new InitialParamsError('"fields" param should at least have one item');
+  }
+
+  fieldNames.forEach((fieldName: string) => {
     if (!FelixTypes.includes(fields[fieldName])) {
-      throw new InitialParamsError(`Incorrect data type for field ${fieldName}`);
+      throw new InitialParamsError(`Incorrect data type for field "${fieldName}"`);
     }
   });
 };

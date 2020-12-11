@@ -34,5 +34,14 @@ describe('checkArgsForAddStatisticalParamMethod', () => {
     // @ts-ignore
     check = () => checkArgsForAddStatisticalParamMethod('banana', {});
     expect(check).toThrow('Type of statistical parameter is not valid');
+
+    // @ts-ignore
+    check = () => checkArgsForAddStatisticalParamMethod('banana', true);
+    expect(check).toThrow('Type of statistical parameter is not valid');
+  });
+
+  test('should return undefined, when all is ok', () => {
+    const result = checkArgsForAddStatisticalParamMethod('age', FelixStatisticalType.min);
+    expect(result).toBeUndefined();
   });
 });

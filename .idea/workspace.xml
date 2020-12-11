@@ -23,14 +23,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b122a41-18b9-4148-84e8-d3c043258a97" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/utils/statisticsCalculators/tests/calculateIntegerRating.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/statisticsCalculators/tests/calculateMax.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/statisticsCalculators/tests/calculateMean.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/statisticsCalculators/tests/calculateMin.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/statisticsCalculators/tests/calculateRating.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/validators/checkIsStatisticalTypeAvailableForField.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/validators/tests/checkChunkFilter.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/validators/tests/checkInitialParams.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/validators/tests/checkIsStatisticalTypeAvailableForField.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/validators/tests/checkUserConsumer.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/validators/tests/isNumber.spec.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/test.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/tests/parseNumber.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/tests/parseNumber.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/validators/checkArgsForAddStatisticalParamMethod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/checkArgsForAddStatisticalParamMethod.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/validators/checkInitialParams.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/checkInitialParams.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/validators/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/validators/isNumber.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/isNumber.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/validators/tests/checkArgsForAddStatisticalParamMethod.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/tests/checkArgsForAddStatisticalParamMethod.spec.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +119,8 @@
       <workItem from="1607444709755" duration="8688000" />
       <workItem from="1607533734051" duration="88000" />
       <workItem from="1607533853840" duration="5682000" />
-      <workItem from="1607619229836" duration="1181000" />
+      <workItem from="1607619229836" duration="7810000" />
+      <workItem from="1607659129140" duration="6103000" />
     </task>
     <task id="LOCAL-00001" summary="init project structure">
       <created>1607160292571</created>
@@ -179,7 +185,21 @@
       <option name="project" value="LOCAL" />
       <updated>1607537915746</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="feat: implement tests for statistics calculators">
+      <created>1607620486201</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1607620486201</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feat: implement tests for statistics extractors">
+      <created>1607623556068</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1607623556068</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,6 +224,8 @@
     <MESSAGE value="feat: implement ability add user function, which get chunks" />
     <MESSAGE value="feat: implement ability to add filter functions, that allow user skip unnecessary corteges" />
     <MESSAGE value="feat: add jest config, implement test for 'parseNumber' function" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add jest config, implement test for 'parseNumber' function" />
+    <MESSAGE value="feat: implement tests for statistics calculators" />
+    <MESSAGE value="feat: implement tests for statistics extractors" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: implement tests for statistics extractors" />
   </component>
 </project>
