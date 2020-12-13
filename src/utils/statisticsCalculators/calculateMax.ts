@@ -14,5 +14,11 @@ export const calculateMax: IStatisticsCalculator = (
   fieldValue = parseNumber(fieldValue);
   isNumber(fieldName, fieldValue);
 
-  return statisticalParams ? { max: Math.max(statisticalParams.max, fieldValue) } : { max: fieldValue };
+  if (!statisticalParams) {
+    return { max: fieldValue };
+  }
+
+  statisticalParams.max = Math.max(statisticalParams.max, fieldValue);
+
+  return statisticalParams;
 };

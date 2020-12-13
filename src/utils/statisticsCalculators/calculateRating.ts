@@ -17,9 +17,7 @@ export const calculateRating: IStatisticsCalculator = (
     statisticalParams = {};
   }
 
-  const newStatisticalParams = { ...statisticalParams };
+  statisticalParams[fieldValue] ? statisticalParams[fieldValue]++ : (statisticalParams[fieldValue] = 1);
 
-  newStatisticalParams[fieldValue] ? newStatisticalParams[fieldValue]++ : (newStatisticalParams[fieldValue] = 1);
-
-  return newStatisticalParams;
+  return statisticalParams;
 };

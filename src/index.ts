@@ -30,8 +30,8 @@ class Felix extends Transform {
   private readonly initialParams: IInitialParams;
   private readonly fieldTypes: IFields;
   private readonly fieldNames: string[];
+  private readonly statisticalData: IStatisticalData;
   private requestedStatistics: IRequestedStatisticsItem[];
-  private statisticalData: IStatisticalData;
   private cortegesNumber: number;
   private userConsumers: IUserConsumer[];
   private chunkFilters: IChunkFilter[];
@@ -146,14 +146,18 @@ class Felix extends Transform {
       const statisticsCalculator = statisticsCalculatorsStatisticalTypesMap.get(statisticalType);
       const newStatistics = statisticsCalculator(fieldName, chunk[fieldName], currentStatistics);
 
-      this.statisticalData = {
-        ...this.statisticalData,
-        [fieldName]: { ...this.statisticalData[fieldName], [statisticalType]: newStatistics },
-      };
+      if (!this.statisticalData[fieldName]) {
+        this.statisticalData[fieldName] = {};
+      }
+
+      this.statisticalData[fieldName][statisticalType] = newStatistics;
     });
 
     if (this.initialParams.countCorteges) {
       this.cortegesNumber++;
+    }
+    if (!(this.cortegesNumber % 100000)) {
+      console.log(this.cortegesNumber);
     }
 
     callback();
@@ -166,7 +170,7 @@ class Felix extends Transform {
       return;
     }
 
-    this.push(JSON.stringify(this.createObjectReport()));
+    this.push(this.createObjectReport());
     callback();
   }
 }

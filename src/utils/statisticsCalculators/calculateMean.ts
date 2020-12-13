@@ -20,10 +20,9 @@ export const calculateMean: IStatisticsCalculator = (
     throw new TypeError(`Field ${fieldName} is not a number. Cortege number - ${statisticsParams.elementsNumber + 1}`);
   }
 
-  const { mean, elementsNumber } = statisticsParams;
+  const newElementsNumber = statisticsParams.elementsNumber + 1;
+  statisticsParams.mean = (statisticsParams.mean * statisticsParams.elementsNumber + fieldValue) / newElementsNumber;
+  statisticsParams.elementsNumber = newElementsNumber;
 
-  const newElementsNumber = elementsNumber + 1;
-  const newMeanValue = (mean * elementsNumber + fieldValue) / newElementsNumber;
-
-  return { mean: newMeanValue, elementsNumber: newElementsNumber };
+  return statisticsParams;
 };

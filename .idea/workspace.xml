@@ -23,19 +23,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b122a41-18b9-4148-84e8-d3c043258a97" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/utils/validators/checkIsStatisticalTypeAvailableForField.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/validators/tests/checkChunkFilter.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/validators/tests/checkInitialParams.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/validators/tests/checkIsStatisticalTypeAvailableForField.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/validators/tests/checkUserConsumer.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/validators/tests/isNumber.spec.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/test.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/validators/checkArgsForAddStatisticalParamMethod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/checkArgsForAddStatisticalParamMethod.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/validators/checkInitialParams.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/checkInitialParams.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/validators/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/statisticsCalculators/calculateIntegerRating.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/statisticsCalculators/calculateIntegerRating.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/statisticsCalculators/calculateMax.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/statisticsCalculators/calculateMax.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/statisticsCalculators/calculateMean.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/statisticsCalculators/calculateMean.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/statisticsCalculators/calculateMin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/statisticsCalculators/calculateMin.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/statisticsCalculators/calculateRating.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/statisticsCalculators/calculateRating.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/validators/isNumber.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/isNumber.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/validators/tests/checkArgsForAddStatisticalParamMethod.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/tests/checkArgsForAddStatisticalParamMethod.spec.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +58,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/node_modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -72,7 +68,7 @@
     <property name="nodejs.mocha.mocha_node_package_dir" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Admin\Documents\materials\projects\node\felix\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.notifications" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="ts.external.directory.path" value="C:\Users\Admin\Documents\materials\projects\node\felix\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -120,7 +116,10 @@
       <workItem from="1607533734051" duration="88000" />
       <workItem from="1607533853840" duration="5682000" />
       <workItem from="1607619229836" duration="7810000" />
-      <workItem from="1607659129140" duration="6103000" />
+      <workItem from="1607659129140" duration="6753000" />
+      <workItem from="1607777796359" duration="2940000" />
+      <workItem from="1607847510745" duration="19000" />
+      <workItem from="1607853991771" duration="6070000" />
     </task>
     <task id="LOCAL-00001" summary="init project structure">
       <created>1607160292571</created>
@@ -199,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607623556068</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="feat: implement tests for validators">
+      <created>1607666846601</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1607666846601</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,6 +232,11 @@
     <MESSAGE value="feat: add jest config, implement test for 'parseNumber' function" />
     <MESSAGE value="feat: implement tests for statistics calculators" />
     <MESSAGE value="feat: implement tests for statistics extractors" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implement tests for statistics extractors" />
+    <MESSAGE value="feat: implement tests for validators" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: implement tests for validators" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

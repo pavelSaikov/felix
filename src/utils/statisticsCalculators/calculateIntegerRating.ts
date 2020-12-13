@@ -19,11 +19,10 @@ export const calculateIntegerRating: IStatisticsCalculator = (
   }
 
   const roundedFieldValue = Math.round(fieldValue);
-  const newStatisticalParams = { ...statisticalParams };
 
-  newStatisticalParams[roundedFieldValue]
-    ? newStatisticalParams[roundedFieldValue]++
-    : (newStatisticalParams[roundedFieldValue] = 1);
+  statisticalParams[roundedFieldValue]
+    ? statisticalParams[roundedFieldValue]++
+    : (statisticalParams[roundedFieldValue] = 1);
 
-  return newStatisticalParams;
+  return statisticalParams;
 };

@@ -14,5 +14,11 @@ export const calculateMin: IStatisticsCalculator = (
   fieldValue = parseNumber(fieldValue);
   isNumber(fieldName, fieldValue);
 
-  return statisticalParams ? { min: Math.min(statisticalParams.min, fieldValue) } : { min: fieldValue };
+  if (!statisticalParams) {
+    return { min: fieldValue };
+  }
+
+  statisticalParams.min = Math.min(statisticalParams.min, fieldValue);
+
+  return statisticalParams;
 };
