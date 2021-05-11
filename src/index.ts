@@ -10,9 +10,8 @@ import {
   IFields,
   IInitialParams,
   IObjectReport,
-  IRequestedStatisticsItem,
   IRequestedStatisticsItemOptions,
-  IStatisticalData,
+  IStatisticsCalculator,
   IUserConsumer,
 } from './models';
 import {
@@ -21,17 +20,14 @@ import {
   checkInitialParams,
   checkIsStatisticalTypeAvailableForField,
   checkUserConsumer,
-  statisticalParamStatisticalReporterMap,
-  statisticalTypeStatisticsExtractorMap,
-  statisticsCalculatorsStatisticalTypesMap,
+  statisticsCalculatorFactoriesStatisticalTypesMap,
 } from './utils';
 
 class Felix extends Transform {
   private readonly initialParams: IInitialParams;
   private readonly fieldTypes: IFields;
   private readonly fieldNames: string[];
-  private readonly statisticalData: IStatisticalData;
-  private requestedStatistics: IRequestedStatisticsItem[];
+  private statisticsCalculators: IStatisticsCalculator[];
   private cortegesNumber: number;
   private userConsumers: IUserConsumer[];
   private chunkFilters: IChunkFilter[];
@@ -44,8 +40,7 @@ class Felix extends Transform {
     this.initialParams = _.cloneDeep(params);
     this.fieldTypes = { ...params?.fields };
     this.fieldNames = Object.keys(params?.fields);
-    this.requestedStatistics = [];
-    this.statisticalData = {};
+    this.statisticsCalculators = [];
     this.cortegesNumber = 0;
     this.userConsumers = [];
     this.chunkFilters = [];
@@ -56,10 +51,8 @@ class Felix extends Transform {
   }
 
   private createTextReport(): string {
-    const reportWithoutCounter = this.requestedStatistics.reduce<string>((report, pieceOfStatistics) => {
-      const { statisticalType, fieldName, options } = pieceOfStatistics;
-      const statistics = this.statisticalData[fieldName][statisticalType];
-      const pieceOfReport = statisticalParamStatisticalReporterMap.get(statisticalType)(fieldName, statistics, options);
+    const reportWithoutCounter = this.statisticsCalculators.reduce<string>((report, statisticsCalculator) => {
+      const pieceOfReport = statisticsCalculator.getStatisticsInStringNotation();
 
       if (!report.length) {
         return pieceOfReport;
@@ -76,18 +69,15 @@ class Felix extends Transform {
   }
 
   private createObjectReport(): IObjectReport {
-    const fieldStatistics = this.requestedStatistics.reduce((acc, { fieldName, statisticalType, options }) => {
-      const currentStatistics = this.statisticalData[fieldName]?.[statisticalType];
-      const preparedStatisticsItem = statisticalTypeStatisticsExtractorMap.get(statisticalType)(
-        currentStatistics,
-        options,
-      );
+    const fieldStatistics = this.statisticsCalculators.reduce((acc, statisticsCalculator) => {
+      const currentStatistics = statisticsCalculator.getStatisticsInObjectNotation();
+      const fieldName = statisticsCalculator.getFieldName();
 
       if (!acc[fieldName]) {
-        acc[fieldName] = {};
+        acc[fieldName] = currentStatistics[fieldName];
       }
 
-      acc[fieldName][statisticalType] = preparedStatisticsItem;
+      acc[fieldName] = { ...acc[fieldName], ...currentStatistics[fieldName] };
 
       return acc;
     }, {});
@@ -112,7 +102,12 @@ class Felix extends Transform {
 
     checkIsStatisticalTypeAvailableForField(fieldName, this.fieldTypes[fieldName], statisticalParamType);
 
-    this.requestedStatistics.push({ fieldName, statisticalType: statisticalParamType, options });
+    const statisticsCalculator = statisticsCalculatorFactoriesStatisticalTypesMap.get(statisticalParamType)({
+      ...options,
+      fieldName,
+    });
+
+    this.statisticsCalculators.push(statisticsCalculator);
   }
 
   public addDataConsumer(consumer: IUserConsumer): void {
@@ -141,22 +136,14 @@ class Felix extends Transform {
       this.userConsumers.forEach(consumer => consumer(_.cloneDeep(chunk)));
     }
 
-    this.requestedStatistics.forEach(({ fieldName, statisticalType }) => {
-      const currentStatistics = this.statisticalData[fieldName]?.[statisticalType];
-      const statisticsCalculator = statisticsCalculatorsStatisticalTypesMap.get(statisticalType);
-      const newStatistics = statisticsCalculator(fieldName, chunk[fieldName], currentStatistics);
-
-      if (!this.statisticalData[fieldName]) {
-        this.statisticalData[fieldName] = {};
-      }
-
-      this.statisticalData[fieldName][statisticalType] = newStatistics;
+    this.statisticsCalculators.forEach(statisticsCalculator => {
+      statisticsCalculator.processChunk(chunk);
     });
 
     if (this.initialParams.countCorteges) {
-      this.cortegesNumber++;
+      this.cortegesNumber = this.cortegesNumber + 1;
     }
-    if (!(this.cortegesNumber % 100000)) {
+    if (!(this.cortegesNumber % 100000) && this.cortegesNumber !== 0) {
       console.log(this.cortegesNumber);
     }
 

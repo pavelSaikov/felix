@@ -1,14 +1,30 @@
-import { FelixStatisticalType, IStatisticsCalculator } from '../../models';
-import { calculateMax } from './calculateMax';
-import { calculateMean } from './calculateMean';
-import { calculateMin } from './calculateMin';
-import { calculateIntegerRating } from './calculateIntegerRating';
-import { calculateRating } from './calculateRating';
+import { FelixStatisticalType, IBaseStatisticsCalculatorParams, IStatisticsCalculator } from '../../models';
+import { IntegerRatingStatisticsCalculator } from './integerRatingStatisticsCalculator';
+import { MeanNumberStatisticsCalculator } from './meanNumberStatisticsCalculator';
+import { MaxNumberStatisticsCalculator } from './maxNumberStatisticsCalculator';
+import { MinNumberStatisticsCalculator } from './minNumberStatisticsCalculator';
+import { NumberRatingStatisticsCalculator } from './numberRatingStatisticsCalculator';
+import { StringRatingStatisticsCalculator } from './stringRatingStatisticsCalculator';
 
-export const statisticsCalculatorsStatisticalTypesMap = new Map<FelixStatisticalType, IStatisticsCalculator>([
-  [FelixStatisticalType.mean, calculateMean],
-  [FelixStatisticalType.max, calculateMax],
-  [FelixStatisticalType.min, calculateMin],
-  [FelixStatisticalType.rating, calculateRating],
-  [FelixStatisticalType.integerRating, calculateIntegerRating],
+type StatisticalCalculatorFactory = (params: IBaseStatisticsCalculatorParams) => IStatisticsCalculator;
+
+export const statisticsCalculatorFactoriesStatisticalTypesMap = new Map<
+  FelixStatisticalType,
+  StatisticalCalculatorFactory
+>([
+  [FelixStatisticalType.mean, (params: IBaseStatisticsCalculatorParams) => new MeanNumberStatisticsCalculator(params)],
+  [FelixStatisticalType.max, (params: IBaseStatisticsCalculatorParams) => new MaxNumberStatisticsCalculator(params)],
+  [FelixStatisticalType.min, (params: IBaseStatisticsCalculatorParams) => new MinNumberStatisticsCalculator(params)],
+  [
+    FelixStatisticalType.numberRating,
+    (params: IBaseStatisticsCalculatorParams) => new NumberRatingStatisticsCalculator(params),
+  ],
+  [
+    FelixStatisticalType.integerRating,
+    (params: IBaseStatisticsCalculatorParams) => new IntegerRatingStatisticsCalculator(params),
+  ],
+  [
+    FelixStatisticalType.stringRating,
+    (params: IBaseStatisticsCalculatorParams) => new StringRatingStatisticsCalculator(params),
+  ],
 ]);

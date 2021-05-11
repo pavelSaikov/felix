@@ -4,42 +4,25 @@
     "node": true
   },
   "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "@typescript-eslint"
-  ],
-  "extends": [
-    "eslint:recommended",
-    "prettier",
-    "prettier/@typescript-eslint",
-    "plugin:@typescript-eslint/recommended"
-  ],
+  "plugins": ["@typescript-eslint"],
+  "extends": ["eslint:recommended", "prettier", "prettier/@typescript-eslint", "plugin:@typescript-eslint/recommended"],
   "parserOptions": {
     "ecmaVersion": 2020,
     "sourceType": "module"
   },
   "rules": {
     "indent": "off",
-    "linebreak-style": [
-      "error",
-      "unix"
-    ],
-    "quotes": [
-      "error",
-      "single"
-    ],
-    "semi": [
-      "error",
-      "always"
-    ],
-    "@typescript-eslint/ban-ts-comment": 0
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "@typescript-eslint/ban-ts-comment": 0,
+    "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/explicit-module-boundary-types": 0
   },
   "settings": {
     "import/resolver": {
       "node": {
-        "extensions": [
-          ".js",
-          ".ts"
-        ]
+        "extensions": [".js", ".ts"]
       }
     }
   }

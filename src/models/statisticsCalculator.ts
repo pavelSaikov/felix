@@ -1,3 +1,20 @@
+import { IRequestedStatisticsItemOptions } from './felixStatisticalTypes';
+
+export interface IBaseStatisticsCalculatorParams extends IRequestedStatisticsItemOptions {
+  fieldName: string;
+}
+
+export interface ISingleValueObjectNotation {
+  [fieldName: string]: { [statisticsType: string]: string | number };
+}
+
+export interface IRatingValueObjectNotation {
+  [fieldName: string]: { [statisticsType: string]: { [key: string]: number | string } };
+}
+
 export interface IStatisticsCalculator {
-  (fieldName: string, fieldValue: string | number, statisticalParams: { [key: string]: any }): { [key: string]: any };
+  processChunk(chunk: any): void;
+  getStatisticsInObjectNotation(): ISingleValueObjectNotation | IRatingValueObjectNotation;
+  getStatisticsInStringNotation(): string;
+  getFieldName(): string;
 }
