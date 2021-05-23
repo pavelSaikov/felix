@@ -1,5 +1,5 @@
-import { StatisticalParamError } from '../../errors';
-import { FelixStatisticalType, FelixStatisticalTypes } from '../../models';
+import { StatisticalParamError } from '../../../errors';
+import { FelixStatisticalType, FelixStatisticalTypes } from '../../../models';
 
 export const checkArgsForAddStatisticalParamMethod = (
   fieldName?: string,

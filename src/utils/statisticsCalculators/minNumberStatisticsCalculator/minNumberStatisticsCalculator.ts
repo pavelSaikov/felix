@@ -30,11 +30,11 @@ export class MinNumberStatisticsCalculator implements IStatisticsCalculator {
   }
 
   public getStatisticsInObjectNotation(): ISingleValueObjectNotation {
-    return { [this.params.fieldName]: { [FelixStatisticalType.min]: this.statistics.min } };
+    return { [this.params.fieldName]: { [FelixStatisticalType.Min]: this.statistics.min } };
   }
 
   public getStatisticsInStringNotation(): string {
-    return singleValueReporter(FelixStatisticalType.min, this.params.fieldName, this.statistics.min);
+    return singleValueReporter(FelixStatisticalType.Min, this.params.fieldName, this.statistics.min);
   }
 
   public getFieldName(): string {

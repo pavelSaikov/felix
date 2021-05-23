@@ -3,3 +3,4 @@ export * from './reporters';
 export * from './statisticsCalculators';
 export * from './parseNumber';
 export * from './statisticsExtractors';
+export * from './grouper';

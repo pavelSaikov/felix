@@ -12,19 +12,19 @@ export const statisticsCalculatorFactoriesStatisticalTypesMap = new Map<
   FelixStatisticalType,
   StatisticalCalculatorFactory
 >([
-  [FelixStatisticalType.mean, (params: IBaseStatisticsCalculatorParams) => new MeanNumberStatisticsCalculator(params)],
-  [FelixStatisticalType.max, (params: IBaseStatisticsCalculatorParams) => new MaxNumberStatisticsCalculator(params)],
-  [FelixStatisticalType.min, (params: IBaseStatisticsCalculatorParams) => new MinNumberStatisticsCalculator(params)],
+  [FelixStatisticalType.Mean, (params: IBaseStatisticsCalculatorParams) => new MeanNumberStatisticsCalculator(params)],
+  [FelixStatisticalType.Max, (params: IBaseStatisticsCalculatorParams) => new MaxNumberStatisticsCalculator(params)],
+  [FelixStatisticalType.Min, (params: IBaseStatisticsCalculatorParams) => new MinNumberStatisticsCalculator(params)],
   [
-    FelixStatisticalType.numberRating,
+    FelixStatisticalType.NumberRating,
     (params: IBaseStatisticsCalculatorParams) => new NumberRatingStatisticsCalculator(params),
   ],
   [
-    FelixStatisticalType.integerRating,
+    FelixStatisticalType.IntegerRating,
     (params: IBaseStatisticsCalculatorParams) => new IntegerRatingStatisticsCalculator(params),
   ],
   [
-    FelixStatisticalType.stringRating,
+    FelixStatisticalType.StringRating,
     (params: IBaseStatisticsCalculatorParams) => new StringRatingStatisticsCalculator(params),
   ],
 ]);

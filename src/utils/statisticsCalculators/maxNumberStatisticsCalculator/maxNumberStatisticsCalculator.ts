@@ -30,11 +30,11 @@ export class MaxNumberStatisticsCalculator implements IStatisticsCalculator {
   }
 
   public getStatisticsInObjectNotation(): ISingleValueObjectNotation {
-    return { [this.params.fieldName]: { [FelixStatisticalType.max]: this.statistics.max } };
+    return { [this.params.fieldName]: { [FelixStatisticalType.Max]: this.statistics.max } };
   }
 
   public getStatisticsInStringNotation(): string {
-    return singleValueReporter(FelixStatisticalType.max, this.params.fieldName, this.statistics.max);
+    return singleValueReporter(FelixStatisticalType.Max, this.params.fieldName, this.statistics.max);
   }
 
   public getFieldName(): string {

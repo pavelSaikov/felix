@@ -1,5 +1,5 @@
-import { StatisticalParamError } from '../../errors';
-import { DataTypeAndAvailableStatisticalTypeMap, FelixStatisticalType, FelixType } from '../../models';
+import { StatisticalParamError } from '../../../errors';
+import { DataTypeAndAvailableStatisticalTypeMap, FelixStatisticalType, FelixType } from '../../../models';
 
 export const checkIsStatisticalTypeAvailableForField = (
   fieldName: string,

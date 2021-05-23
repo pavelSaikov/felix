@@ -1,19 +1,19 @@
 import { FelixStatisticalType } from '../../../models';
-import { checkArgsForAddStatisticalParamMethod } from '../checkArgsForAddStatisticalParamMethod';
+import { checkArgsForAddStatisticalParamMethod } from '../addStatisticalParamMethod';
 
 describe('checkArgsForAddStatisticalParamMethod', () => {
   test('should throw Error, when field name is not defined', () => {
-    const check = () => checkArgsForAddStatisticalParamMethod(undefined, FelixStatisticalType.min);
+    const check = () => checkArgsForAddStatisticalParamMethod(undefined, FelixStatisticalType.Min);
     expect(check).toThrow('Field name is not defined');
   });
 
   test('should throw Error, when field name is not string', () => {
     // @ts-ignore
-    let check = () => checkArgsForAddStatisticalParamMethod(1, FelixStatisticalType.min);
+    let check = () => checkArgsForAddStatisticalParamMethod(1, FelixStatisticalType.Min);
     expect(check).toThrow('Field name should has "string type');
 
     // @ts-ignore
-    check = () => checkArgsForAddStatisticalParamMethod({}, FelixStatisticalType.min);
+    check = () => checkArgsForAddStatisticalParamMethod({}, FelixStatisticalType.Min);
     expect(check).toThrow('Field name should has "string type');
   });
 
@@ -41,7 +41,7 @@ describe('checkArgsForAddStatisticalParamMethod', () => {
   });
 
   test('should return undefined, when all is ok', () => {
-    const result = checkArgsForAddStatisticalParamMethod('age', FelixStatisticalType.min);
+    const result = checkArgsForAddStatisticalParamMethod('age', FelixStatisticalType.Min);
     expect(result).toBeUndefined();
   });
 });

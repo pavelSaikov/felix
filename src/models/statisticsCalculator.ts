@@ -12,9 +12,12 @@ export interface IRatingValueObjectNotation {
   [fieldName: string]: { [statisticsType: string]: { [key: string]: number | string } };
 }
 
-export interface IStatisticsCalculator {
+export interface IGrouper {
   processChunk(chunk: any): void;
   getStatisticsInObjectNotation(): ISingleValueObjectNotation | IRatingValueObjectNotation;
   getStatisticsInStringNotation(): string;
+}
+
+export interface IStatisticsCalculator extends IGrouper {
   getFieldName(): string;
 }

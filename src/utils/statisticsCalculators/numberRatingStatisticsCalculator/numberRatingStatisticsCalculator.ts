@@ -32,13 +32,13 @@ export class NumberRatingStatisticsCalculator implements IStatisticsCalculator {
   public getStatisticsInObjectNotation(): IRatingValueObjectNotation {
     return {
       [this.params.fieldName]: {
-        [FelixStatisticalType.numberRating]: extractRatingStatistics(this.statistics, this.params),
+        [FelixStatisticalType.NumberRating]: extractRatingStatistics(this.statistics, this.params),
       },
     };
   }
 
   public getStatisticsInStringNotation(): string {
-    return ratingReporter(FelixStatisticalType.numberRating, this.params.fieldName, this.statistics);
+    return ratingReporter(FelixStatisticalType.NumberRating, this.params.fieldName, this.statistics);
   }
 
   public getFieldName(): string {

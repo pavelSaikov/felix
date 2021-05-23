@@ -2,6 +2,7 @@ export * from './felixStatisticalTypes';
 export * from './felixTypes';
 export * from './initialParams';
 export * from './statisticsCalculator';
+export * from './felixGroupingTypes';
 
 export interface IChunk {
   [key: string]: string | number;

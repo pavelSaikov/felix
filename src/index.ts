@@ -3,34 +3,43 @@ import _ from 'lodash';
 
 import { StatisticalParamError } from './errors';
 import {
+  FelixGroupingType,
   FelixStatisticalType,
   FelixType,
   IChunk,
   IChunkFilter,
+  IFieldGrouping,
   IFields,
+  IGrouper,
   IInitialParams,
   IObjectReport,
+  IRequestedStatisticsItem,
   IRequestedStatisticsItemOptions,
   IStatisticsCalculator,
   IUserConsumer,
 } from './models';
 import {
+  checkArgsForAddGropingParamMethod,
   checkArgsForAddStatisticalParamMethod,
   checkChunkFilter,
   checkInitialParams,
+  checkIsGropingTypeAvailableForField,
   checkIsStatisticalTypeAvailableForField,
   checkUserConsumer,
-  statisticsCalculatorFactoriesStatisticalTypesMap,
+  Grouper,
 } from './utils';
 
 class Felix extends Transform {
   private readonly initialParams: IInitialParams;
   private readonly fieldTypes: IFields;
   private readonly fieldNames: string[];
+  private readonly requestedStatistics: IRequestedStatisticsItem[];
+  private readonly fieldsGroupings: IFieldGrouping[];
   private statisticsCalculators: IStatisticsCalculator[];
   private cortegesNumber: number;
   private userConsumers: IUserConsumer[];
   private chunkFilters: IChunkFilter[];
+  private grouper: IGrouper;
 
   constructor(params?: IInitialParams) {
     checkInitialParams(params);
@@ -44,6 +53,8 @@ class Felix extends Transform {
     this.cortegesNumber = 0;
     this.userConsumers = [];
     this.chunkFilters = [];
+    this.requestedStatistics = [];
+    this.fieldsGroupings = [];
   }
 
   private checkIsFieldExists(fieldName: string) {
@@ -91,23 +102,30 @@ class Felix extends Transform {
 
   public addStatisticalParam(
     fieldName: string,
-    statisticalParamType: FelixStatisticalType,
+    statisticalType: FelixStatisticalType,
     options?: IRequestedStatisticsItemOptions,
   ): void {
-    checkArgsForAddStatisticalParamMethod(fieldName, statisticalParamType);
+    checkArgsForAddStatisticalParamMethod(fieldName, statisticalType);
 
     if (!this.checkIsFieldExists(fieldName)) {
       throw new StatisticalParamError('Field name is not found in data fields');
     }
 
-    checkIsStatisticalTypeAvailableForField(fieldName, this.fieldTypes[fieldName], statisticalParamType);
+    checkIsStatisticalTypeAvailableForField(fieldName, this.fieldTypes[fieldName], statisticalType);
 
-    const statisticsCalculator = statisticsCalculatorFactoriesStatisticalTypesMap.get(statisticalParamType)({
-      ...options,
-      fieldName,
-    });
+    this.requestedStatistics.push({ fieldName, statisticalType, options });
+  }
 
-    this.statisticsCalculators.push(statisticsCalculator);
+  public addGroupingParam(fieldName: string, groupingType: FelixGroupingType): void {
+    checkArgsForAddGropingParamMethod(fieldName, groupingType);
+
+    if (!this.checkIsFieldExists(fieldName)) {
+      throw new StatisticalParamError('Field name is not found in data fields');
+    }
+
+    checkIsGropingTypeAvailableForField(fieldName, this.fieldTypes[fieldName], groupingType);
+
+    this.fieldsGroupings.push({ fieldName, groupingType });
   }
 
   public addDataConsumer(consumer: IUserConsumer): void {
@@ -136,30 +154,30 @@ class Felix extends Transform {
       this.userConsumers.forEach(consumer => consumer(_.cloneDeep(chunk)));
     }
 
-    this.statisticsCalculators.forEach(statisticsCalculator => {
-      statisticsCalculator.processChunk(chunk);
-    });
+    if (!this.grouper) {
+      this.grouper = new Grouper({
+        fieldTypes: this.fieldTypes,
+        fieldsGroupings: this.fieldsGroupings,
+        requestedStatistics: this.requestedStatistics,
+        nestingLevelIndex: 0,
+      });
+    }
 
-    if (this.initialParams.countCorteges) {
-      this.cortegesNumber = this.cortegesNumber + 1;
-    }
-    if (!(this.cortegesNumber % 100000) && this.cortegesNumber !== 0) {
-      console.log(this.cortegesNumber);
-    }
+    this.grouper.processChunk(chunk);
 
     callback();
   }
 
   public _flush(callback: TransformCallback): void {
     if (this.initialParams.createTextReport) {
-      this.push(this.createTextReport());
+      this.push(this.grouper.getStatisticsInStringNotation());
       callback();
       return;
     }
 
-    this.push(this.createObjectReport());
+    this.push(this.grouper.getStatisticsInObjectNotation());
     callback();
   }
 }
 
-export { FelixType, FelixStatisticalType, Felix };
+export { FelixType, FelixStatisticalType, FelixGroupingType, Felix };

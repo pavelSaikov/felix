@@ -31,11 +31,11 @@ export class MeanNumberStatisticsCalculator implements IStatisticsCalculator {
   }
 
   public getStatisticsInObjectNotation(): ISingleValueObjectNotation {
-    return { [this.params.fieldName]: { [FelixStatisticalType.mean]: this.statistics.mean } };
+    return { [this.params.fieldName]: { [FelixStatisticalType.Mean]: this.statistics.mean } };
   }
 
   public getStatisticsInStringNotation(): string {
-    return singleValueReporter(FelixStatisticalType.mean, this.params.fieldName, this.statistics.mean);
+    return singleValueReporter(FelixStatisticalType.Mean, this.params.fieldName, this.statistics.mean);
   }
 
   public getFieldName(): string {
